@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar'
 import { DefaultTheme, Provider } from 'react-native-paper'
 import { ThemeProp } from 'react-native-paper/lib/typescript/types'
 import { Router } from './src/navigation/router'
@@ -15,6 +16,7 @@ const theme: ThemeProp = {
 export default function App() {
     return (
         <Provider theme={theme}>
+            <StatusBar style='light' />
             <Router />
         </Provider>
     )
