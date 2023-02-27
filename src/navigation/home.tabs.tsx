@@ -1,13 +1,12 @@
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
-import {
-    DiscoverScreen,
-    FollowingScreen,
-    SearchByScreen,
-    SearchForScreen
-} from '../screens'
+
 import { Colors } from '../values/colors'
 import { HomeTabsParamList, Screens } from './types'
+import { FollowingScreenStack } from './following.stack'
+import { DiscoverScreenStack } from './discover.stack'
+import { LookForScreenStack } from './lookfor.stack'
+import { SearchByScreenStack } from './searchby.stack'
 
 const Tab = createMaterialBottomTabNavigator<HomeTabsParamList>()
 
@@ -23,8 +22,8 @@ export function HomeTabs() {
             barStyle={{ backgroundColor: Colors.background }}
         >
             <Tab.Screen
-                name={Screens.FollowingScreen}
-                component={FollowingScreen}
+                name={Screens.FollowingStack}
+                component={FollowingScreenStack}
                 options={{
                     tabBarLabel: 'Seguindo',
                     tabBarIcon: ({ color, focused }) =>
@@ -32,8 +31,8 @@ export function HomeTabs() {
                 }}
             />
             <Tab.Screen
-                name={Screens.DiscoverScreen}
-                component={DiscoverScreen}
+                name={Screens.DiscoverStack}
+                component={DiscoverScreenStack}
                 options={{
                     tabBarLabel: 'Descubra',
                     tabBarIcon: ({ color, focused }) =>
@@ -44,8 +43,8 @@ export function HomeTabs() {
                 }}
             />
             <Tab.Screen
-                name={Screens.SearchForScreen}
-                component={SearchForScreen}
+                name={Screens.LookForStack}
+                component={LookForScreenStack}
                 options={{
                     tabBarLabel: 'Procurar',
                     tabBarIcon: ({ color, focused }) =>
@@ -56,8 +55,8 @@ export function HomeTabs() {
                 }}
             />
             <Tab.Screen
-                name={Screens.SearchByScreen}
-                component={SearchByScreen}
+                name={Screens.SearchByStack}
+                component={SearchByScreenStack}
                 options={{
                     tabBarLabel: 'Busca',
                     tabBarIcon: ({ color }) => getTabIcon('magnify', color)

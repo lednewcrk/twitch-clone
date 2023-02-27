@@ -1,11 +1,11 @@
 import { Text, View } from 'react-native'
 import { styles } from './styles'
-import { SearchForScreenProps } from './types'
+import { LookForScreenProps } from './types'
 
-export function SearchForScreen({}: SearchForScreenProps) {
+export function LookForScreen({}: LookForScreenProps) {
     return (
         <View style={styles.container}>
-            <Text>Search For Screen</Text>
+            <Text>Look For Screen</Text>
         </View>
     )
 }

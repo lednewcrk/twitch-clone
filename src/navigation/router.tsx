@@ -4,7 +4,7 @@ import {
     DefaultTheme
 } from '@react-navigation/native'
 import { Colors } from '../values/colors'
-import { MainStack } from './main.stack'
+import { HomeTabs } from './home.tabs'
 
 const theme: Theme = {
     ...DefaultTheme,
@@ -17,7 +17,7 @@ const theme: Theme = {
 export function Router() {
     return (
         <NavigationContainer theme={theme}>
-            <MainStack />
+            <HomeTabs />
         </NavigationContainer>
     )
 }

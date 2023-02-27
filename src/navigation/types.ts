@@ -1,21 +1,34 @@
 export enum Screens {
     FollowingScreen = 'FollowingScreen',
     DiscoverScreen = 'DiscoverScreen',
-    SearchForScreen = 'SearchForScreen',
-    SearchByScreen = 'SearchByScreen'
-}
+    SearchByScreen = 'SearchByScreen',
+    LookForScreen = 'LookForScreen',
 
-export enum Tabs {
-    HomeTabs = 'HomeTabs'
-}
-
-export type MainStackParamList = {
-    [Tabs.HomeTabs]: undefined
+    FollowingStack = 'FollowingStack',
+    DiscoverStack = 'DiscoverStack',
+    SearchByStack = 'SearchByStack',
+    LookForStack = 'LookForStack'
 }
 
 export type HomeTabsParamList = {
+    [Screens.FollowingStack]: undefined
+    [Screens.DiscoverStack]: undefined
+    [Screens.SearchByStack]: undefined
+    [Screens.LookForStack]: undefined
+}
+
+export type FollowingScreenParamList = {
     [Screens.FollowingScreen]: undefined
+}
+
+export type DiscoverScreenParamList = {
     [Screens.DiscoverScreen]: undefined
-    [Screens.SearchForScreen]: undefined
+}
+
+export type SearchByScreenParamList = {
     [Screens.SearchByScreen]: undefined
+}
+
+export type LookForScreenParamList = {
+    [Screens.LookForScreen]: undefined
 }
