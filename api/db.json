@@ -1,0 +1,263 @@
+{
+    "followed_categories": [
+        {
+            "id": 1,
+            "cover": "https://static-cdn.jtvnw.net/ttv-boxart/32399_IGDB-272x380.jpg",
+            "name": "Counter-Strike",
+            "onlineViewerCount": 31000
+        },
+        {
+            "id": 2,
+            "cover": "https://thumbnails.pcgamingwiki.com/4/40/League_of_Legends_-_cover.jpg/300px-League_of_Legends_-_cover.jpg",
+            "name": "League of Legends",
+            "onlineViewerCount": 97800
+        },
+        {
+            "id": 3,
+            "cover": "https://upload.wikimedia.org/wikipedia/pt/e/e9/Dead_By_Daylight.png",
+            "name": "Dead by Daylight",
+            "onlineViewerCount": 30000
+        },
+        {
+            "id": 4,
+            "cover": "https://www.dropingame.com/images/game/cover/280x400/dofus.jpg",
+            "name": "Dofus",
+            "onlineViewerCount": 579
+        },
+        {
+            "id": 5,
+            "cover": "https://pbs.twimg.com/media/EF5Yh8rXUAcevSe.png",
+            "name": "Fortinite",
+            "onlineViewerCount": 89300
+        },
+        {
+            "id": 6,
+            "cover": "https://az743702.vo.msecnd.net/cdn/useruploads/png_41b3c6bd-924d-411c-94e1-a7a6b5c6b65e.png",
+            "name": "Hearthstone",
+            "onlineViewerCount": 9600
+        },
+        {
+            "id": 7,
+            "cover": "https://thumbnails.pcgamingwiki.com/f/ff/Lost_Ark_cover.jpg/300px-Lost_Ark_cover.jpg",
+            "name": "Lost Ark",
+            "onlineViewerCount": 5300
+        },
+        {
+            "id": 8,
+            "cover": "https://static-cdn.jtvnw.net/ttv-boxart/509670-285x380.jpg",
+            "name": "Ciência e tecnologia",
+            "onlineViewerCount": 8900
+        },
+        {
+            "id": 9,
+            "cover": "https://static-cdn.jtvnw.net/ttv-boxart/1469308723-144x192.jpg",
+            "name": "Desenvolvimento de jogos e softwares",
+            "onlineViewerCount": 1400
+        },
+        {
+            "id": 10,
+            "cover": "https://static-cdn.jtvnw.net/ttv-boxart/513143-285x380.jpg",
+            "name": "Teamfight Tactics",
+            "onlineViewerCount": 18300
+        },
+        {
+            "id": 11,
+            "cover": "https://assets-prd.ignimgs.com/2021/12/15/legendofzelda-linktothepast-1639586882982.jpg",
+            "name": "The Legend of Zelda: A Link to the Past",
+            "onlineViewerCount": 1
+        },
+        {
+            "id": 12,
+            "cover": "https://m.media-amazon.com/images/M/MV5BODhkN2U1YzYtODQzZC00MTc5LTlmMmYtYjQ2ZGU2ZmM4YzJkXkEyXkFqcGdeQXVyMTE0MTc4MjU2._V1_FMjpg_UX1000_.jpg",
+            "name": "Valorant",
+            "onlineViewerCount": 135500
+        },
+        {
+            "id": 13,
+            "cover": "https://notadogame.com/uploads/game/cover/250x/5e4d73d89ad95.jpg",
+            "name": "Stoneshard",
+            "onlineViewerCount": 0
+        }
+    ],
+    "live_channels": [
+        {
+            "id": 1,
+            "onlineViewerCount": 4100,
+            "streamer": {
+                "id": 1,
+                "name": "TonnyKanaan",
+                "avatarUrl": "https://cdn.dribbble.com/users/130163/screenshots/6209150/twitch-avatar.png"
+            },
+            "title": "Truck em Phoenix! | +18 !discord | !logitech",
+            "category": {
+                "id": 14,
+                "name": "iRacing"
+            },
+            "tags": ["TonnyKanaan", "Iracing"]
+        },
+        {
+            "id": 2,
+            "onlineViewerCount": 3200,
+            "streamer": {
+                "id": 2,
+                "name": "absoluttlol",
+                "avatarUrl": "https://cdn.dribbble.com/users/130163/screenshots/6209150/twitch-avatar.png"
+            },
+            "title": "GM Queue Medalhão mentality !BCGAME !coach",
+            "category": {
+                "id": 2,
+                "name": "League of Legends"
+            },
+            "tags": ["Português", "Absolut"]
+        },
+        {
+            "id": 3,
+            "onlineViewerCount": 2600,
+            "streamer": {
+                "id": 2,
+                "name": "Rakin",
+                "avatarUrl": "https://cdn.dribbble.com/users/130163/screenshots/6209150/twitch-avatar.png"
+            },
+            "title": "CASSINAO +18 8K DOL START !BCGAME # AD",
+            "category": {
+                "id": 15,
+                "name": "Virtual Cassino"
+            },
+            "tags": ["Português", "DropsAtivados"]
+        },
+        {
+            "id": 4,
+            "onlineViewerCount": 2500,
+            "streamer": {
+                "id": 3,
+                "name": "Gaules",
+                "avatarUrl": "https://cdn.dribbble.com/users/130163/screenshots/6209150/twitch-avatar.png"
+            },
+            "title": "Rerun: Noite das Mulas - Siga @gaules nas redes sociais",
+            "category": {
+                "id": 16,
+                "name": "Night of the Dead"
+            },
+            "tags": ["Português", "DropsAtivados"]
+        },
+        {
+            "id": 5,
+            "onlineViewerCount": 2200,
+            "streamer": {
+                "id": 4,
+                "name": "titanlol1",
+                "avatarUrl": "https://cdn.dribbble.com/users/130163/screenshots/6209150/twitch-avatar.png"
+            },
+            "title": "soloq SEM MIC/CAM",
+            "category": {
+                "id": 2,
+                "name": "League of Legends"
+            },
+            "tags": ["Português"]
+        }
+    ],
+    "recommended_channels": [
+        {
+            "id": 1,
+            "onlineViewerCount": 4100,
+            "streamer": {
+                "id": 1,
+                "name": "TonnyKanaan",
+                "avatarUrl": "https://pbs.twimg.com/media/CCtGYRIWEAAvd7l.jpg"
+            },
+            "title": "Truck em Phoenix! | +18 !discord | !logitech",
+            "category": {
+                "id": 14,
+                "name": "iRacing"
+            },
+            "tags": ["TonnyKanaan", "Iracing"]
+        },
+        {
+            "id": 2,
+            "onlineViewerCount": 3200,
+            "streamer": {
+                "id": 2,
+                "name": "absoluttlol",
+                "avatarUrl": "https://pbs.twimg.com/media/CCtGYRIWEAAvd7l.jpg"
+            },
+            "title": "GM Queue Medalhão mentality !BCGAME !coach",
+            "category": {
+                "id": 2,
+                "name": "League of Legends"
+            },
+            "tags": ["Português", "Absolut"]
+        },
+        {
+            "id": 3,
+            "onlineViewerCount": 2600,
+            "streamer": {
+                "id": 2,
+                "name": "Rakin",
+                "avatarUrl": "https://pbs.twimg.com/media/CCtGYRIWEAAvd7l.jpg"
+            },
+            "title": "CASSINAO +18 8K DOL START !BCGAME # AD",
+            "category": {
+                "id": 15,
+                "name": "Virtual Cassino"
+            },
+            "tags": ["Português", "DropsAtivados"]
+        },
+        {
+            "id": 4,
+            "onlineViewerCount": 2500,
+            "streamer": {
+                "id": 3,
+                "name": "Gaules",
+                "avatarUrl": "https://pbs.twimg.com/media/CCtGYRIWEAAvd7l.jpg"
+            },
+            "title": "Rerun: Noite das Mulas - Siga @gaules nas redes sociais",
+            "category": {
+                "id": 16,
+                "name": "Night of the Dead"
+            },
+            "tags": ["Português", "DropsAtivados"]
+        },
+        {
+            "id": 5,
+            "onlineViewerCount": 2200,
+            "streamer": {
+                "id": 4,
+                "name": "titanlol1",
+                "avatarUrl": "https://pbs.twimg.com/media/CCtGYRIWEAAvd7l.jpg"
+            },
+            "title": "soloq SEM MIC/CAM",
+            "category": {
+                "id": 2,
+                "name": "League of Legends"
+            },
+            "tags": ["Português"]
+        }
+    ],
+    "offiline_channels": [
+        {
+            "id": 1,
+            "name": "VALORANT_BR",
+            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png"
+        },
+        {
+            "id": 2,
+            "name": "Mano_Imp",
+            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png"
+        },
+        {
+            "id": 3,
+            "name": "DragaoDoEspaco",
+            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png"
+        },
+        {
+            "id": 4,
+            "name": "VelhoVamp1",
+            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png"
+        },
+        {
+            "id": 5,
+            "name": "paulanobre",
+            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png"
+        }
+    ]
+}
