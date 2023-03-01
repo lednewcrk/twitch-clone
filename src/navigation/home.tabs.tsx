@@ -7,6 +7,7 @@ import { FollowingScreenStack } from './following.stack'
 import { DiscoverScreenStack } from './discover.stack'
 import { LookForScreenStack } from './lookfor.stack'
 import { SearchByScreenStack } from './searchby.stack'
+import { TwitchCloneConstants } from '../values/constants'
 
 const Tab = createMaterialBottomTabNavigator<HomeTabsParamList>()
 
@@ -19,7 +20,10 @@ export function HomeTabs() {
         <Tab.Navigator
             activeColor={Colors.primaryLight}
             inactiveColor={Colors.text}
-            barStyle={{ backgroundColor: Colors.background }}
+            barStyle={{
+                backgroundColor: Colors.background,
+                height: TwitchCloneConstants.BOTTOM_TAB_HEIGHT
+            }}
         >
             <Tab.Screen
                 name={Screens.FollowingStack}

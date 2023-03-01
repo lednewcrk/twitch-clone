@@ -1,13 +1,11 @@
-import { useEffect } from 'react'
-import { Text, View } from 'react-native'
-import { Avatar } from '../../components'
+import { View, Text } from 'react-native'
 import { styles } from './styles'
 import { FollowingScreenProps } from './types'
 
-export function FollowingScreen({ navigation }: FollowingScreenProps) {
+export function FollowingScreen({}: FollowingScreenProps) {
     return (
         <View style={styles.container}>
-            <Text>Home Screen</Text>
+            <Text>Following Screen</Text>
         </View>
     )
 }

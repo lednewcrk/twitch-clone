@@ -3,6 +3,7 @@ import {
     Theme,
     DefaultTheme
 } from '@react-navigation/native'
+import { StreamViewer } from '../components'
 import { Colors } from '../values/colors'
 import { HomeTabs } from './home.tabs'
 
@@ -17,7 +18,9 @@ const theme: Theme = {
 export function Router() {
     return (
         <NavigationContainer theme={theme}>
-            <HomeTabs />
+            <StreamViewer>
+                <HomeTabs />
+            </StreamViewer>
         </NavigationContainer>
     )
 }

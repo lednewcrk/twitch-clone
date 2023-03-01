@@ -4,5 +4,5 @@ export const Colors = {
     primary: '#512B93',
     primaryLight: '#8257c4',
 
-    gray: '#FEFEFE'
+    gray: '#D3D3D3'
 }
