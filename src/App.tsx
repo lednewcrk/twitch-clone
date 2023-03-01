@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper'
-import { ThemeProp } from 'react-native-paper/lib/typescript/types'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { Router } from './navigation/router'
@@ -10,12 +9,13 @@ import { queryClient } from './services/api'
 import { StreamViewerProvider } from './components/StreamViewer'
 import { BuildProviderTree, ProviderProps } from './BuildProviderTree'
 
-const theme: ThemeProp = {
+const theme = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
         background: Colors.background,
-        secondaryContainer: 'transparent'
+        secondaryContainer: 'transparent',
+        text: Colors.text
     }
 }
 

@@ -2,79 +2,79 @@
     "followed_categories": [
         {
             "id": 1,
-            "cover": "https://static-cdn.jtvnw.net/ttv-boxart/32399_IGDB-272x380.jpg",
+            "coverUrl": "https://static-cdn.jtvnw.net/ttv-boxart/32399_IGDB-272x380.jpg",
             "name": "Counter-Strike",
             "onlineViewerCount": 31000
         },
         {
             "id": 2,
-            "cover": "https://thumbnails.pcgamingwiki.com/4/40/League_of_Legends_-_cover.jpg/300px-League_of_Legends_-_cover.jpg",
+            "coverUrl": "https://thumbnails.pcgamingwiki.com/4/40/League_of_Legends_-_cover.jpg/300px-League_of_Legends_-_cover.jpg",
             "name": "League of Legends",
             "onlineViewerCount": 97800
         },
         {
             "id": 3,
-            "cover": "https://upload.wikimedia.org/wikipedia/pt/e/e9/Dead_By_Daylight.png",
+            "coverUrl": "https://upload.wikimedia.org/wikipedia/pt/e/e9/Dead_By_Daylight.png",
             "name": "Dead by Daylight",
             "onlineViewerCount": 30000
         },
         {
             "id": 4,
-            "cover": "https://www.dropingame.com/images/game/cover/280x400/dofus.jpg",
+            "coverUrl": "https://www.dropingame.com/images/game/cover/280x400/dofus.jpg",
             "name": "Dofus",
             "onlineViewerCount": 579
         },
         {
             "id": 5,
-            "cover": "https://pbs.twimg.com/media/EF5Yh8rXUAcevSe.png",
+            "coverUrl": "https://pbs.twimg.com/media/EF5Yh8rXUAcevSe.png",
             "name": "Fortinite",
             "onlineViewerCount": 89300
         },
         {
             "id": 6,
-            "cover": "https://az743702.vo.msecnd.net/cdn/useruploads/png_41b3c6bd-924d-411c-94e1-a7a6b5c6b65e.png",
+            "coverUrl": "https://az743702.vo.msecnd.net/cdn/useruploads/png_41b3c6bd-924d-411c-94e1-a7a6b5c6b65e.png",
             "name": "Hearthstone",
             "onlineViewerCount": 9600
         },
         {
             "id": 7,
-            "cover": "https://thumbnails.pcgamingwiki.com/f/ff/Lost_Ark_cover.jpg/300px-Lost_Ark_cover.jpg",
+            "coverUrl": "https://thumbnails.pcgamingwiki.com/f/ff/Lost_Ark_cover.jpg/300px-Lost_Ark_cover.jpg",
             "name": "Lost Ark",
             "onlineViewerCount": 5300
         },
         {
             "id": 8,
-            "cover": "https://static-cdn.jtvnw.net/ttv-boxart/509670-285x380.jpg",
+            "coverUrl": "https://static-cdn.jtvnw.net/ttv-boxart/509670-285x380.jpg",
             "name": "Ciência e tecnologia",
             "onlineViewerCount": 8900
         },
         {
             "id": 9,
-            "cover": "https://static-cdn.jtvnw.net/ttv-boxart/1469308723-144x192.jpg",
+            "coverUrl": "https://static-cdn.jtvnw.net/ttv-boxart/1469308723-144x192.jpg",
             "name": "Desenvolvimento de jogos e softwares",
             "onlineViewerCount": 1400
         },
         {
             "id": 10,
-            "cover": "https://static-cdn.jtvnw.net/ttv-boxart/513143-285x380.jpg",
+            "coverUrl": "https://static-cdn.jtvnw.net/ttv-boxart/513143-285x380.jpg",
             "name": "Teamfight Tactics",
             "onlineViewerCount": 18300
         },
         {
             "id": 11,
-            "cover": "https://assets-prd.ignimgs.com/2021/12/15/legendofzelda-linktothepast-1639586882982.jpg",
+            "coverUrl": "https://assets-prd.ignimgs.com/2021/12/15/legendofzelda-linktothepast-1639586882982.jpg",
             "name": "The Legend of Zelda: A Link to the Past",
             "onlineViewerCount": 1
         },
         {
             "id": 12,
-            "cover": "https://m.media-amazon.com/images/M/MV5BODhkN2U1YzYtODQzZC00MTc5LTlmMmYtYjQ2ZGU2ZmM4YzJkXkEyXkFqcGdeQXVyMTE0MTc4MjU2._V1_FMjpg_UX1000_.jpg",
+            "coverUrl": "https://m.media-amazon.com/images/M/MV5BODhkN2U1YzYtODQzZC00MTc5LTlmMmYtYjQ2ZGU2ZmM4YzJkXkEyXkFqcGdeQXVyMTE0MTc4MjU2._V1_FMjpg_UX1000_.jpg",
             "name": "Valorant",
             "onlineViewerCount": 135500
         },
         {
             "id": 13,
-            "cover": "https://notadogame.com/uploads/game/cover/250x/5e4d73d89ad95.jpg",
+            "coverUrl": "https://notadogame.com/uploads/game/cover/250x/5e4d73d89ad95.jpg",
             "name": "Stoneshard",
             "onlineViewerCount": 0
         }
