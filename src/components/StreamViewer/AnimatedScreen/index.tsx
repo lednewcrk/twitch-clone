@@ -1,5 +1,5 @@
 import { View } from 'react-native'
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler'
 import Animated, {
     Extrapolate,
@@ -18,15 +18,21 @@ import {
     TRANSLATE_HEIGHT_BOUND
 } from '../Constants'
 import { VideoPlayer } from '../VideoPlayer'
-
 import { styles } from './styles'
 import { Chat } from '../Chat'
+import { Stream } from '../Context'
 
 export type AnimatedScreenProps = {
+    isEnabled: boolean
+    currentStream: Stream | null
     children?: React.ReactNode
 }
 
-export function AnimatedScreen({ children }: AnimatedScreenProps) {
+export function AnimatedScreen({
+    children,
+    isEnabled,
+    currentStream
+}: AnimatedScreenProps) {
     const isMiniPlayer = useSharedValue(false)
     const context = useSharedValue({ y: 0 })
     const translateY = useSharedValue(0)
@@ -121,17 +127,25 @@ export function AnimatedScreen({ children }: AnimatedScreenProps) {
         }
     }
 
+    useEffect(() => {
+        translateToMiniPlayer()
+    }, [])
+
     return (
         <GestureDetector gesture={gesture}>
             <View style={styles.container}>
                 <View style={styles.childrenContainer}>{children}</View>
-                <Animated.View style={[styles.viewerContainer, animatedStyles]}>
-                    <VideoPlayer
-                        isMiniPlayer={isMiniPlayer}
-                        onPress={onPressVideoPlayer}
-                    />
-                    <Chat />
-                </Animated.View>
+                {isEnabled && (
+                    <Animated.View
+                        style={[styles.viewerContainer, animatedStyles]}
+                    >
+                        <VideoPlayer
+                            isMiniPlayer={isMiniPlayer}
+                            onPress={onPressVideoPlayer}
+                        />
+                        <Chat />
+                    </Animated.View>
+                )}
             </View>
         </GestureDetector>
     )

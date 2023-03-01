@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Avatar } from '../components'
 import { FollowingScreen } from '../screens'
+
 import { Colors } from '../values/colors'
 import { FollowingScreenParamList, Screens } from './types'
 
@@ -13,6 +14,7 @@ export function FollowingScreenStack() {
                 name={Screens.FollowingScreen}
                 component={FollowingScreen}
                 options={{
+                    title: '',
                     headerTitle: () => null,
                     headerStyle: {
                         backgroundColor: Colors.background

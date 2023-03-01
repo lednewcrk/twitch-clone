@@ -14,6 +14,7 @@ export function LookForScreenStack() {
                 name={Screens.LookForScreen}
                 component={LookForScreen}
                 options={{
+                    title: '',
                     headerTitle: () => null,
                     headerStyle: {
                         backgroundColor: Colors.background

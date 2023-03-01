@@ -14,6 +14,7 @@ export function SearchByScreenStack() {
                 name={Screens.SearchByScreen}
                 component={SearchByScreen}
                 options={{
+                    title: '',
                     headerTitle: () => null,
                     headerStyle: {
                         backgroundColor: Colors.background

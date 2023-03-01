@@ -13,6 +13,7 @@ export function DiscoverScreenStack() {
                 name={Screens.DiscoverScreen}
                 component={DiscoverScreen}
                 options={{
+                    title: '',
                     headerTitle: () => null,
                     headerStyle: {
                         backgroundColor: Colors.background
