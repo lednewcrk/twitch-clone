@@ -3,7 +3,8 @@ import {
     Theme,
     DefaultTheme
 } from '@react-navigation/native'
-import { StreamViewer } from '../components'
+import { StreamViewer } from '../components/StreamViewer'
+
 import { Colors } from '../values/colors'
 import { HomeTabs } from './home.tabs'
 

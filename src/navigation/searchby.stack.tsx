@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { Avatar } from '../components'
+import { Avatar } from '../components/Avatar'
 import { SearchByScreen } from '../screens'
 import { Colors } from '../values/colors'
 

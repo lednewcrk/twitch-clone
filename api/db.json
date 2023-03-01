@@ -3,7 +3,7 @@
         {
             "id": 1,
             "coverUrl": "https://static-cdn.jtvnw.net/ttv-boxart/32399_IGDB-272x380.jpg",
-            "name": "Counter-Strike",
+            "name": "Counter-Strike: Global Offensive",
             "onlineViewerCount": 31000
         },
         {
@@ -93,7 +93,8 @@
                 "id": 14,
                 "name": "iRacing"
             },
-            "tags": ["TonnyKanaan", "Iracing"]
+            "tags": ["TonnyKanaan", "Iracing"],
+            "streamUrl": ""
         },
         {
             "id": 2,
@@ -108,7 +109,15 @@
                 "id": 2,
                 "name": "League of Legends"
             },
-            "tags": ["Português", "Absolut"]
+            "tags": [
+                "P2e",
+                "Bsc",
+                "Cripto",
+                "Nfts",
+                "Investimentos",
+                "Finanças"
+            ],
+            "streamUrl": ""
         },
         {
             "id": 3,
@@ -123,7 +132,8 @@
                 "id": 15,
                 "name": "Virtual Cassino"
             },
-            "tags": ["Português", "DropsAtivados"]
+            "tags": ["Português", "DropsAtivados"],
+            "streamUrl": ""
         },
         {
             "id": 4,
@@ -135,10 +145,11 @@
             },
             "title": "Rerun: Noite das Mulas - Siga @gaules nas redes sociais",
             "category": {
-                "id": 16,
-                "name": "Night of the Dead"
+                "id": 1,
+                "name": "Counter-Strike: Global Offensive"
             },
-            "tags": ["Português", "DropsAtivados"]
+            "tags": ["Português", "DropsAtivados"],
+            "streamUrl": ""
         },
         {
             "id": 5,
@@ -153,7 +164,8 @@
                 "id": 2,
                 "name": "League of Legends"
             },
-            "tags": ["Português"]
+            "tags": ["Português"],
+            "streamUrl": ""
         }
     ],
     "recommended_channels": [
@@ -170,7 +182,8 @@
                 "id": 14,
                 "name": "iRacing"
             },
-            "tags": ["TonnyKanaan", "Iracing"]
+            "tags": ["TonnyKanaan", "Iracing"],
+            "streamUrl": ""
         },
         {
             "id": 2,
@@ -185,7 +198,8 @@
                 "id": 2,
                 "name": "League of Legends"
             },
-            "tags": ["Português", "Absolut"]
+            "tags": ["Português", "Absolut"],
+            "streamUrl": ""
         },
         {
             "id": 3,
@@ -200,7 +214,8 @@
                 "id": 15,
                 "name": "Virtual Cassino"
             },
-            "tags": ["Português", "DropsAtivados"]
+            "tags": ["Português", "DropsAtivados"],
+            "streamUrl": ""
         },
         {
             "id": 4,
@@ -215,7 +230,8 @@
                 "id": 16,
                 "name": "Night of the Dead"
             },
-            "tags": ["Português", "DropsAtivados"]
+            "tags": ["Português", "DropsAtivados"],
+            "streamUrl": ""
         },
         {
             "id": 5,
@@ -230,7 +246,8 @@
                 "id": 2,
                 "name": "League of Legends"
             },
-            "tags": ["Português"]
+            "tags": ["Português"],
+            "streamUrl": ""
         }
     ],
     "offiline_channels": [

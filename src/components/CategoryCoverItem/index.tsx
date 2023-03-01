@@ -1,24 +1,21 @@
 import { Image, StyleProp, View, ViewStyle } from 'react-native'
 import { Text } from 'react-native-paper'
+import { Category } from '../../types'
 import { Dot } from '../Dot'
 import { styles } from './styles'
 
 export type CategoryCoverItemProps = {
-    coverUrl: string
-    name: string
-    onlineViewerCount: number
+    category: Category
     style?: StyleProp<ViewStyle>
 }
 
 export function CategoryCoverItem({
-    coverUrl,
-    name,
-    onlineViewerCount,
+    category: { coverUrl, name, onlineViewerCount },
     style
 }: CategoryCoverItemProps) {
     const formated = new Intl.NumberFormat('pt-BR', {
         notation: 'compact'
-    }).format(onlineViewerCount)
+    }).format(onlineViewerCount ?? 0)
 
     return (
         <View style={[styles.container, style]}>

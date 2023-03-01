@@ -5,54 +5,49 @@ import {
     LayoutProvider,
     RecyclerListView
 } from 'recyclerlistview'
-import { Category } from '../../types/Category'
-import { CategoryCoverItem } from '../CategoryCoverItem'
+import { Channel } from '../../types'
+import { LiveChannelItem } from '../LiveChannelItem'
+
 import { ITEM_HEIGHT, ITEM_WIDTH, styles } from './styles'
 
-export type CategoriesListProps = {
-    categories: Category[]
+export type LiveChannelsListProps = {
+    channels: Channel[]
     itemSize?: { width: number; height: number }
     listScrollContainerStyle?: StyleProp<ViewStyle>
 }
 
-export function CategoriesList({
-    categories,
+export function LiveChannelsList({
+    channels,
     itemSize = { width: ITEM_WIDTH, height: ITEM_HEIGHT },
     listScrollContainerStyle
-}: CategoriesListProps) {
+}: LiveChannelsListProps) {
     const dataProvider = new DataProvider((r1, r2) => {
         return r1.id !== r2.id
     })
 
     const layoutProvider = new LayoutProvider(
-        index => 'CATEGORY_COVER_ITEM',
+        index => 'ONLINE_CHANNEL_ITEM',
         (type, dim) => {
             dim.width = itemSize.width
             dim.height = itemSize.height
         }
     )
 
-    const [data, setData] = useState(dataProvider.cloneWithRows(categories))
+    const [data, setData] = useState(dataProvider.cloneWithRows(channels))
 
     useEffect(() => {
-        setData(dataProvider.cloneWithRows(categories))
-    }, [categories])
+        setData(dataProvider.cloneWithRows(channels))
+    }, [channels])
 
     const rowRenderer = (type: string | number, data: any) => {
-        const category = data as Category
+        const channel = data as Channel
 
-        return (
-            <CategoryCoverItem
-                category={category}
-                style={styles.categoryCoverItem}
-            />
-        )
+        return <LiveChannelItem channel={channel} />
     }
 
     return (
         <View style={styles.container}>
             <RecyclerListView
-                isHorizontal
                 style={styles.list}
                 dataProvider={data}
                 layoutProvider={layoutProvider}

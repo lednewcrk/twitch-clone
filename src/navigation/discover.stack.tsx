@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { Avatar } from '../components'
+import { Avatar } from '../components/Avatar'
 import { DiscoverScreen } from '../screens'
 import { Colors } from '../values/colors'
 import { DiscoverScreenParamList, Screens } from './types'
