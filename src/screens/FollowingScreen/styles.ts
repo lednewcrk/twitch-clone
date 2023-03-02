@@ -5,5 +5,11 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         color: Colors.background
+    },
+    screenPadding: {
+        paddingHorizontal: 16
+    },
+    listStartPadding: {
+        paddingLeft: 16
     }
 })
