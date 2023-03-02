@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
         flex: 1
     },
     viewerContainer: {
-        ...StyleSheet.absoluteFillObject
+        ...StyleSheet.absoluteFillObject,
+        overflow: 'hidden'
     }
 })

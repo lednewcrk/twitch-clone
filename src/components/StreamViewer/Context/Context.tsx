@@ -14,9 +14,18 @@ export function StreamViewerProvider({ children }: StreamViewerProviderType) {
     const onStartStream: StreamViewerContextType['onStartStream'] =
         setCurrentStream
 
+    const onCloseStream: StreamViewerContextType['onCloseStream'] = () => {
+        setCurrentStream(null)
+    }
+
     return (
         <StreamViewerContext.Provider
-            value={{ isLiveStreaming, currentStream, onStartStream }}
+            value={{
+                isLiveStreaming,
+                currentStream,
+                onStartStream,
+                onCloseStream
+            }}
         >
             {children}
         </StreamViewerContext.Provider>

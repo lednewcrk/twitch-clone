@@ -18,9 +18,14 @@ import { styles } from './styles'
 export type VideoPlayerProps = {
     isMiniPlayer: SharedValue<boolean>
     onPress?: () => void
+    translateX: SharedValue<number>
 }
 
-export function VideoPlayer({ isMiniPlayer, onPress }: VideoPlayerProps) {
+export function VideoPlayer({
+    isMiniPlayer,
+    onPress,
+    translateX
+}: VideoPlayerProps) {
     const playerWidth = useSharedValue(PLAYER_WIDTH)
     const playerHeight = useSharedValue(PLAYER_HEIGHT)
 
@@ -40,7 +45,8 @@ export function VideoPlayer({ isMiniPlayer, onPress }: VideoPlayerProps) {
     const animatedStyles = useAnimatedStyle(() => {
         return {
             width: playerWidth.value,
-            height: playerHeight.value
+            height: playerHeight.value,
+            transform: [{ translateX: translateX.value }]
         }
     })
 

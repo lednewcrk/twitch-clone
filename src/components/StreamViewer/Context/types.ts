@@ -6,6 +6,7 @@ export type StreamViewerContextType = {
     isLiveStreaming: boolean
     currentStream: Stream | null
     onStartStream: (stream: Stream) => void
+    onCloseStream: () => void
 }
 
 export type StreamViewerProviderType = {
