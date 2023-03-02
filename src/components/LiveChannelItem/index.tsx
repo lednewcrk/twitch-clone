@@ -1,4 +1,4 @@
-import { StyleProp, View, ViewStyle, Text } from 'react-native'
+import { StyleProp, View, ViewStyle, Text, Pressable } from 'react-native'
 import { Channel } from '../../types'
 import { Avatar } from '../Avatar'
 import { LiveStreamThumbnail } from '../LiveStreamThumbnail'
@@ -9,18 +9,16 @@ import { styles } from './styles'
 export type LiveChannelItemProps = {
     channel: Channel
     style?: StyleProp<ViewStyle>
+    onPress?: () => void
 }
 
 export function LiveChannelItem({
     channel: { category, onlineViewerCount, streamUrl, streamer, tags, title },
-    style
+    style,
+    onPress
 }: LiveChannelItemProps) {
-    // const formated = new Intl.NumberFormat('pt-BR', {
-    //     notation: 'compact'
-    // }).format(onlineViewerCount)
-
     return (
-        <View style={[styles.container, style]}>
+        <Pressable style={[styles.container, style]} onPress={onPress}>
             <LiveStreamThumbnail
                 streamUrl={streamUrl}
                 onlineViewerCount={onlineViewerCount}
@@ -50,6 +48,6 @@ export function LiveChannelItem({
                     <TagList tags={tags} numberOfLines={1} />
                 </View>
             </View>
-        </View>
+        </Pressable>
     )
 }

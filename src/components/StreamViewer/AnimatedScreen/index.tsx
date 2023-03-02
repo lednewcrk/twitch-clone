@@ -33,6 +33,7 @@ export function AnimatedScreen({
     isEnabled,
     currentStream
 }: AnimatedScreenProps) {
+    const opacity = useSharedValue(0)
     const isMiniPlayer = useSharedValue(false)
     const context = useSharedValue({ y: 0 })
     const translateY = useSharedValue(0)
@@ -112,6 +113,7 @@ export function AnimatedScreen({
 
     const animatedStyles = useAnimatedStyle(() => {
         return {
+            opacity: opacity.value,
             width: screenWidth.value,
             height: screenHeight.value,
             transform: [
@@ -127,9 +129,15 @@ export function AnimatedScreen({
         }
     }
 
+    const onChangeOpacity = (value: number) => {
+        'worklet'
+        opacity.value = withTiming(value)
+    }
+
     useEffect(() => {
-        translateToMiniPlayer()
-    }, [])
+        if (isEnabled) onChangeOpacity(1)
+        else onChangeOpacity(0)
+    }, [isEnabled])
 
     return (
         <GestureDetector gesture={gesture}>

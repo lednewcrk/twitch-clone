@@ -22,10 +22,12 @@ import {
 import { ListHeader } from '../../components/ListHeader'
 import { LiveChannelItem } from '../../components/LiveChannelItem'
 import { AnimatedHeader } from '../../components/AnimatedHeader'
+import { useStreamViewer } from '../../components/StreamViewer'
 
 const AnimatedRecyclerList = Animated.createAnimatedComponent(RecyclerListView)
 
 export function FollowingScreen({}: FollowingScreenProps) {
+    const { onStartStream } = useStreamViewer()
     const recyclerRef = useRef<any>(null)
     const recyclerViewOffsetY = useSharedValue(0)
 
@@ -89,6 +91,12 @@ export function FollowingScreen({}: FollowingScreenProps) {
         return LayoutUtils.getLayoutProvider(dataProvider.getAllData())
     }, [dataProvider])
 
+    const onPressLiveChannel = (channel: Channel) => {
+        onStartStream({
+            id: channel.id
+        })
+    }
+
     const rowRenderer = (
         type: string | number,
         { data }: any,
@@ -123,6 +131,7 @@ export function FollowingScreen({}: FollowingScreenProps) {
                     <LiveChannelItem
                         channel={data.channel}
                         style={styles.screenPadding}
+                        onPress={() => onPressLiveChannel(data.channel)}
                     />
                 )
             default:
