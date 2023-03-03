@@ -13,9 +13,10 @@ import { FollowingScreenProps } from './types'
 import {
     fetchFollowedCategories,
     fetchLiveChannels,
+    fetchOfflineChannels,
     fetchRecommendedChannels
 } from '../../services/api'
-import { Category, Channel } from '../../types'
+import { Category, Channel, Streamer } from '../../types'
 import { CategoriesList } from '../../components/CategoriesList'
 import {
     LayoutData,
@@ -27,6 +28,7 @@ import { ListHeader } from '../../components/ListHeader'
 import { LiveChannelItem } from '../../components/LiveChannelItem'
 import { AnimatedHeader } from '../../components/AnimatedHeader'
 import { useStreamViewer } from '../../components/StreamViewer'
+import { StreamerItem } from '../../components/StreamerItem'
 
 const AnimatedRecyclerList = Animated.createAnimatedComponent(RecyclerListView)
 
@@ -48,6 +50,11 @@ export function FollowingScreen({}: FollowingScreenProps) {
     const { data: recommendedChannels } = useQuery<Channel[]>({
         queryKey: ['recommended_channels'],
         queryFn: fetchRecommendedChannels
+    })
+
+    const { data: offlineChannels } = useQuery<Streamer[]>({
+        queryKey: ['offline_channels'],
+        queryFn: fetchOfflineChannels
     })
 
     const [dataProvider, setDataProvider] = useState(
@@ -105,10 +112,22 @@ export function FollowingScreen({}: FollowingScreenProps) {
             data.push(...channels)
         }
 
-        setDataProvider(dataProvider.cloneWithRows(data))
-    }, [followedCategories, liveChannels, recommendedChannels])
+        if (offlineChannels) {
+            data.push({
+                type: LayoutType.LIST_HEADER,
+                data: { title: 'Seus canais off-line' }
+            })
 
-    // dataProvider = dataProvider.cloneWithRows(data)
+            const channels = offlineChannels.map(it => ({
+                type: LayoutType.STREAMER_ITEM,
+                data: { streamer: it }
+            }))
+
+            data.push(...channels)
+        }
+
+        setDataProvider(dataProvider.cloneWithRows(data))
+    }, [followedCategories, liveChannels, recommendedChannels, offlineChannels])
 
     const layoutProvider = useMemo(() => {
         return LayoutUtils.getLayoutProvider(dataProvider.getAllData())
@@ -156,6 +175,13 @@ export function FollowingScreen({}: FollowingScreenProps) {
                         channel={data.channel}
                         style={styles.screenPadding}
                         onPress={() => onPressLiveChannel(data.channel)}
+                    />
+                )
+            case LayoutType.STREAMER_ITEM:
+                return (
+                    <StreamerItem
+                        streamer={data.streamer}
+                        style={styles.screenPadding}
                     />
                 )
             default:

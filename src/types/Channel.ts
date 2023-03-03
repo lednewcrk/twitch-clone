@@ -8,6 +8,6 @@ export type Channel = {
     title: string
     category: Omit<Category, 'coverUrl' | 'onlineViewerCount'>
     tags: Tag[]
-    streamer: Streamer
+    streamer: Omit<Streamer, 'newVideosCount'>
     streamUrl: string
 }

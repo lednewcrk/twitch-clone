@@ -1,18 +1,23 @@
 import { Dimensions } from 'react-native'
 import { LayoutProvider } from 'recyclerlistview'
 import { ListHeaderProps } from '../../components/ListHeader'
-import { Category, Channel } from '../../types'
+import { Category, Channel, Streamer } from '../../types'
 
 export enum LayoutType {
     SCREEN_TITLE,
     LIST_HEADER,
     CATEGORY_LIST,
-    LIVE_CHANNEL_ITEM
+    LIVE_CHANNEL_ITEM,
+    STREAMER_ITEM
 }
 
 export type LayoutData = {
     type: LayoutType
-    data: ListHeaderProps | { categories: Category[] } | { channel: Channel }
+    data:
+        | ListHeaderProps
+        | { categories: Category[] }
+        | { channel: Channel }
+        | { streamer: Streamer }
 }
 
 export const SCREEN_WIDTH = Dimensions.get('window').width
@@ -20,6 +25,7 @@ export const SCREEN_TITLE_HEIGHT = 60
 export const LIST_HEADER_HEIGHT = 50
 export const CATEGORY_LIST_HEIGHT = 260
 export const LIVE_CHANNEL_ITEM_HEIGHT = 140
+export const STREAMER_ITEM_HEIGHT = 100
 
 export class LayoutUtils {
     static getLayoutProvider(data: LayoutData[]) {
@@ -45,6 +51,10 @@ export class LayoutUtils {
                     case LayoutType.LIVE_CHANNEL_ITEM:
                         dim.width = SCREEN_WIDTH
                         dim.height = LIVE_CHANNEL_ITEM_HEIGHT
+                        break
+                    case LayoutType.STREAMER_ITEM:
+                        dim.width = SCREEN_WIDTH
+                        dim.height = STREAMER_ITEM_HEIGHT
                         break
                     default:
                         dim.width = 0

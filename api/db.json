@@ -250,31 +250,36 @@
             "streamUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
         }
     ],
-    "offiline_channels": [
+    "offline_channels": [
         {
             "id": 1,
             "name": "VALORANT_BR",
-            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png"
+            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png",
+            "newVideosCount": 1
         },
         {
             "id": 2,
             "name": "Mano_Imp",
-            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png"
+            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png",
+            "newVideosCount": 2
         },
         {
             "id": 3,
             "name": "DragaoDoEspaco",
-            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png"
+            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png",
+            "newVideosCount": 3
         },
         {
             "id": 4,
             "name": "VelhoVamp1",
-            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png"
+            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png",
+            "newVideosCount": 10
         },
         {
             "id": 5,
             "name": "paulanobre",
-            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png"
+            "avatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8665eabb-4872-45d5-9b47-409ba5f3274a-profile_image-70x70.png",
+            "newVideosCount": 16
         }
     ]
 }
