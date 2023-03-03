@@ -10,7 +10,11 @@ import StickyContainer from 'recyclerlistview/sticky'
 import Animated, { useSharedValue } from 'react-native-reanimated'
 import { styles } from './styles'
 import { FollowingScreenProps } from './types'
-import { fetchFollowedCategories, fetchLiveChannels } from '../../services/api'
+import {
+    fetchFollowedCategories,
+    fetchLiveChannels,
+    fetchRecommendedChannels
+} from '../../services/api'
 import { Category, Channel } from '../../types'
 import { CategoriesList } from '../../components/CategoriesList'
 import {
@@ -39,6 +43,11 @@ export function FollowingScreen({}: FollowingScreenProps) {
     const { data: liveChannels } = useQuery<Channel[]>({
         queryKey: ['live_channels'],
         queryFn: fetchLiveChannels
+    })
+
+    const { data: recommendedChannels } = useQuery<Channel[]>({
+        queryKey: ['recommended_channels'],
+        queryFn: fetchRecommendedChannels
     })
 
     const [dataProvider, setDataProvider] = useState(
@@ -82,8 +91,22 @@ export function FollowingScreen({}: FollowingScreenProps) {
             data.push(...channels)
         }
 
+        if (recommendedChannels) {
+            data.push({
+                type: LayoutType.LIST_HEADER,
+                data: { title: 'Canais recomendados para você' }
+            })
+
+            const channels = recommendedChannels.map(it => ({
+                type: LayoutType.LIVE_CHANNEL_ITEM,
+                data: { channel: it }
+            }))
+
+            data.push(...channels)
+        }
+
         setDataProvider(dataProvider.cloneWithRows(data))
-    }, [followedCategories, liveChannels])
+    }, [followedCategories, liveChannels, recommendedChannels])
 
     // dataProvider = dataProvider.cloneWithRows(data)
 
