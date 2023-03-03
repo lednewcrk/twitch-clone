@@ -9,6 +9,7 @@ import Animated, {
     useSharedValue,
     withTiming
 } from 'react-native-reanimated'
+import { Video } from 'expo-av'
 import {
     MAX_TRANSLATE_Y,
     MIDDLE_SCRREN,
@@ -17,6 +18,7 @@ import {
     MINIPLAYER_WIDTH,
     SCREEN_HEIGHT,
     SCREEN_WIDTH,
+    STATUSBAR_HEIGHT,
     TRANSLATE_HEIGHT_BOUND
 } from '../Constants'
 import { VideoPlayer } from '../VideoPlayer'
@@ -26,16 +28,16 @@ import { Stream } from '../Context'
 
 export type AnimatedScreenProps = {
     isEnabled: boolean
-    currentStream: Stream | null
     children?: React.ReactNode
     onClose?: () => void
+    videoPlayerRef?: React.Ref<Video>
 }
 
 export function AnimatedScreen({
     children,
     isEnabled,
-    currentStream,
-    onClose
+    onClose,
+    videoPlayerRef
 }: AnimatedScreenProps) {
     const opacity = useSharedValue(0)
     const isMiniPlayer = useSharedValue(false)
@@ -46,6 +48,7 @@ export function AnimatedScreen({
     const miniplayerTranslateX = useSharedValue(0)
     const screenWidth = useSharedValue(SCREEN_WIDTH)
     const screenHeight = useSharedValue(SCREEN_HEIGHT)
+    const paddingTop = useSharedValue(STATUSBAR_HEIGHT)
 
     function restoreAllSharedValues() {
         'worklet'
@@ -76,6 +79,7 @@ export function AnimatedScreen({
         translateX.value = withTiming(0)
         screenWidth.value = withTiming(SCREEN_WIDTH)
         screenHeight.value = withTiming(SCREEN_HEIGHT)
+        paddingTop.value = withTiming(STATUSBAR_HEIGHT)
         isMiniPlayer.value = false
     }
 
@@ -93,6 +97,7 @@ export function AnimatedScreen({
         translateX.value = withTiming(SCREEN_WIDTH - MINIPLAYER_WIDTH - 16)
         screenWidth.value = withTiming(MINIPLAYER_WIDTH)
         screenHeight.value = withTiming(MINIPLAYER_HEIGHT)
+        paddingTop.value = withTiming(0)
         isMiniPlayer.value = true
     }
 
@@ -164,6 +169,7 @@ export function AnimatedScreen({
             opacity: opacity.value,
             width: screenWidth.value,
             height: screenHeight.value,
+            paddingTop: paddingTop.value,
             transform: [
                 { translateY: translateY.value },
                 { translateX: translateX.value }
@@ -196,9 +202,10 @@ export function AnimatedScreen({
                         style={[styles.viewerContainer, animatedStyles]}
                     >
                         <VideoPlayer
+                            ref={videoPlayerRef}
                             isMiniPlayer={isMiniPlayer}
-                            onPress={onPressVideoPlayer}
                             translateX={miniplayerTranslateX}
+                            onPress={onPressVideoPlayer}
                         />
                         <Chat />
                     </Animated.View>

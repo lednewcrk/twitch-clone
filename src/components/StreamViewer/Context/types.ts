@@ -1,5 +1,6 @@
 export type Stream = {
     id: number
+    source: string
 }
 
 export type StreamViewerContextType = {

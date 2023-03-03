@@ -94,7 +94,7 @@
                 "name": "iRacing"
             },
             "tags": ["TonnyKanaan", "Iracing"],
-            "streamUrl": ""
+            "streamUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
         },
         {
             "id": 2,
@@ -117,7 +117,7 @@
                 "Investimentos",
                 "Finanças"
             ],
-            "streamUrl": ""
+            "streamUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
         },
         {
             "id": 3,
@@ -133,7 +133,7 @@
                 "name": "Virtual Cassino"
             },
             "tags": ["Português", "DropsAtivados"],
-            "streamUrl": ""
+            "streamUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
         },
         {
             "id": 4,
@@ -149,7 +149,7 @@
                 "name": "Counter-Strike: Global Offensive"
             },
             "tags": ["Português", "DropsAtivados"],
-            "streamUrl": ""
+            "streamUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
         },
         {
             "id": 5,
@@ -165,7 +165,7 @@
                 "name": "League of Legends"
             },
             "tags": ["Português"],
-            "streamUrl": ""
+            "streamUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
         }
     ],
     "recommended_channels": [
@@ -183,7 +183,7 @@
                 "name": "iRacing"
             },
             "tags": ["TonnyKanaan", "Iracing"],
-            "streamUrl": ""
+            "streamUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
         },
         {
             "id": 2,
@@ -199,7 +199,7 @@
                 "name": "League of Legends"
             },
             "tags": ["Português", "Absolut"],
-            "streamUrl": ""
+            "streamUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
         },
         {
             "id": 3,
@@ -215,7 +215,7 @@
                 "name": "Virtual Cassino"
             },
             "tags": ["Português", "DropsAtivados"],
-            "streamUrl": ""
+            "streamUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
         },
         {
             "id": 4,
@@ -231,7 +231,7 @@
                 "name": "Night of the Dead"
             },
             "tags": ["Português", "DropsAtivados"],
-            "streamUrl": ""
+            "streamUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
         },
         {
             "id": 5,
@@ -247,7 +247,7 @@
                 "name": "League of Legends"
             },
             "tags": ["Português"],
-            "streamUrl": ""
+            "streamUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
         }
     ],
     "offiline_channels": [

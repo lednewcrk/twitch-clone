@@ -93,7 +93,8 @@ export function FollowingScreen({}: FollowingScreenProps) {
 
     const onPressLiveChannel = (channel: Channel) => {
         onStartStream({
-            id: channel.id
+            id: channel.id,
+            source: channel.streamUrl
         })
     }
 
