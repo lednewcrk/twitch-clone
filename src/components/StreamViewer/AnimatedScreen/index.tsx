@@ -101,10 +101,11 @@ export function AnimatedScreen({
         isMiniPlayer.value = true
     }
 
-    function closeMiniplayer() {
+    function closeMiniplayer(direction: 'left' | 'right') {
         'worklet'
+        const multiplier = direction === 'left' ? -1 : 1
         miniplayerTranslateX.value = withTiming(
-            MINIPLAYER_WIDTH,
+            MINIPLAYER_WIDTH * multiplier,
             undefined,
             restoreAllSharedValues
         )
@@ -152,10 +153,14 @@ export function AnimatedScreen({
                         }
                     } else {
                         if (
-                            miniplayerTranslateX.value >=
+                            Math.abs(miniplayerTranslateX.value) >=
                             MINIPLAYER_TRANSLATE_X_BOUND
                         ) {
-                            closeMiniplayer()
+                            const direction =
+                                miniplayerTranslateX.value >= 0
+                                    ? 'right'
+                                    : 'left'
+                            closeMiniplayer(direction)
                         } else {
                             restoreMiniplayer()
                         }
