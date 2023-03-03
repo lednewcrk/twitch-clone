@@ -4,7 +4,7 @@ import { Colors } from '../../../values/colors'
 export const styles = StyleSheet.create({
     container: {
         aspectRatio: 1920 / 1080,
-        backgroundColor: Colors.darkGray
+        backgroundColor: Colors.black
     },
     video: {
         ...StyleSheet.absoluteFillObject
