@@ -24,6 +24,7 @@ export function SearchByScreenStack() {
                             source={{
                                 uri: 'https://criticalhits.com.br/wp-content/uploads/2022/04/blob_7gmc.jpg'
                             }}
+                            fadeAnimationIsEnabled={false}
                         />
                     )
                 }}

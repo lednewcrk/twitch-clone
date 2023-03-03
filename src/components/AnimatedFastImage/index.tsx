@@ -8,16 +8,19 @@ import Animated, {
 // @ts-ignore
 const AnimatedFastImageComponent = Animated.createAnimatedComponent(FastImage)
 
-export type AnimatedFastImageProps = FastImageProps
+export type AnimatedFastImageProps = FastImageProps & {
+    fadeAnimationIsEnabled?: boolean
+}
 
 export function AnimatedFastImage({
     onLoadStart,
     onLoadEnd,
     onError,
     style,
+    fadeAnimationIsEnabled = true,
     ...rest
-}: FastImageProps) {
-    const opacity = useSharedValue(0)
+}: AnimatedFastImageProps) {
+    const opacity = useSharedValue(fadeAnimationIsEnabled ? 0 : 1)
 
     const animatedStyle = useAnimatedStyle(() => ({
         opacity: opacity.value

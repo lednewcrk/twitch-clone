@@ -8,13 +8,15 @@ export type AvatarProps = {
     size?: number
     borderRadius?: number
     style?: AnimatedFastImageProps['style']
+    fadeAnimationIsEnabled?: boolean
 }
 
 export function Avatar({
     source,
     size = 40,
     borderRadius,
-    style
+    style,
+    fadeAnimationIsEnabled = true
 }: AvatarProps) {
     const avatarStyle = useMemo<AnimatedFastImageProps['style']>(
         () => ({
@@ -29,6 +31,7 @@ export function Avatar({
         <AnimatedFastImage
             source={source}
             style={[styles.avatar, avatarStyle, style]}
+            fadeAnimationIsEnabled={fadeAnimationIsEnabled}
         />
     )
 }
