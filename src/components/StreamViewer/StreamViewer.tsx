@@ -11,7 +11,6 @@ export function StreamViewer({ children }: StreamViewerProps) {
 
     useEffect(() => {
         if (currentStream) {
-            console.log('START STREAMING =>', currentStream.source)
             videoPlayerRef.current
                 ?.loadAsync({
                     uri: currentStream.source,
@@ -21,7 +20,6 @@ export function StreamViewer({ children }: StreamViewerProps) {
                     videoPlayerRef.current?.playAsync()
                 })
         } else {
-            console.log('STOP STREAMING')
             videoPlayerRef.current?.stopAsync()
         }
     }, [currentStream])
