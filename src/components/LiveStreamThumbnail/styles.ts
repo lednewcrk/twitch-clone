@@ -24,7 +24,6 @@ export const styles = StyleSheet.create({
         marginRight: 8
     },
     thumbnail: {
-        flex: 1,
-        backgroundColor: Colors.darkGray
+        flex: 1
     }
 })

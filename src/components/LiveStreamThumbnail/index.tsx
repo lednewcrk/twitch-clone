@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native'
-import FastImage from 'react-native-fast-image'
+import { AnimatedFastImage } from '../AnimatedFastImage'
 import { Dot } from '../Dot'
 import { styles } from './styles'
 
@@ -19,7 +19,7 @@ export function LiveStreamThumbnail({
     }).format(onlineViewerCount ?? 0)
     return (
         <View style={[styles.container, size]}>
-            <FastImage
+            <AnimatedFastImage
                 style={styles.thumbnail}
                 source={{
                     uri: 'https://pbs.twimg.com/media/DeYVmVqW4AEIjlk.jpg'

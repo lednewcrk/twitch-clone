@@ -1,7 +1,7 @@
 import { StyleProp, View, ViewStyle } from 'react-native'
-import FastImage from 'react-native-fast-image'
 import { Text } from 'react-native-paper'
 import { Category } from '../../types'
+import { AnimatedFastImage } from '../AnimatedFastImage'
 import { Dot } from '../Dot'
 import { styles } from './styles'
 
@@ -21,7 +21,7 @@ export function CategoryCoverItem({
     return (
         <View style={[styles.container, style]}>
             <View style={styles.coverImagecontainer}>
-                <FastImage
+                <AnimatedFastImage
                     source={{ uri: coverUrl }}
                     style={styles.coverImage}
                 />

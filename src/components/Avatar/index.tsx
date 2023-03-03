@@ -1,12 +1,13 @@
 import { useMemo } from 'react'
-import FastImage, { FastImageProps } from 'react-native-fast-image'
+
+import { AnimatedFastImage, AnimatedFastImageProps } from '../AnimatedFastImage'
 import { styles } from './styles'
 
 export type AvatarProps = {
-    source?: FastImageProps['source']
+    source?: AnimatedFastImageProps['source']
     size?: number
     borderRadius?: number
-    style?: FastImageProps['style']
+    style?: AnimatedFastImageProps['style']
 }
 
 export function Avatar({
@@ -15,7 +16,7 @@ export function Avatar({
     borderRadius,
     style
 }: AvatarProps) {
-    const avatarStyle = useMemo<FastImageProps['style']>(
+    const avatarStyle = useMemo<AnimatedFastImageProps['style']>(
         () => ({
             width: size,
             height: size,
@@ -25,7 +26,7 @@ export function Avatar({
     )
 
     return (
-        <FastImage
+        <AnimatedFastImage
             source={source}
             style={[styles.avatar, avatarStyle, style]}
         />
