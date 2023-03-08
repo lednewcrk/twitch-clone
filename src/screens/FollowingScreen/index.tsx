@@ -1,34 +1,19 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
-import { useQuery } from '@tanstack/react-query'
+import { useMemo, useRef } from 'react'
 import { View } from 'react-native'
-import {
-    DataProvider,
-    RecyclerListView,
-    RecyclerListViewProps
-} from 'recyclerlistview'
+import { RecyclerListView, RecyclerListViewProps } from 'recyclerlistview'
 import StickyContainer from 'recyclerlistview/sticky'
 import Animated, { useSharedValue } from 'react-native-reanimated'
 import { styles } from './styles'
 import { FollowingScreenProps } from './types'
-import {
-    fetchFollowedCategories,
-    fetchLiveChannels,
-    fetchOfflineChannels,
-    fetchRecommendedChannels
-} from '../../services/api'
-import { Category, Channel, Streamer } from '../../types'
+import { Channel } from '../../types'
 import { CategoriesList } from '../../components/CategoriesList'
-import {
-    LayoutData,
-    LayoutType,
-    LayoutUtils,
-    SCREEN_TITLE_HEIGHT
-} from './LayoutUtils'
+import { LayoutData, LayoutType, SCREEN_TITLE_HEIGHT } from './LayoutUtils'
 import { ListHeader } from '../../components/ListHeader'
 import { LiveChannelItem } from '../../components/LiveChannelItem'
 import { AnimatedHeader } from '../../components/AnimatedHeader'
 import { useStreamViewer } from '../../components/StreamViewer'
 import { StreamerItem } from '../../components/StreamerItem'
+import { useFetchData, useRecyclerView } from './hooks'
 
 const AnimatedRecyclerList = Animated.createAnimatedComponent(RecyclerListView)
 
@@ -37,101 +22,19 @@ export function FollowingScreen({}: FollowingScreenProps) {
     const recyclerRef = useRef<any>(null)
     const recyclerViewOffsetY = useSharedValue(0)
 
-    const { data: followedCategories } = useQuery<Category[]>({
-        queryKey: ['followedCategories'],
-        queryFn: fetchFollowedCategories
+    const {
+        followedCategories,
+        liveChannels,
+        offlineChannels,
+        recommendedChannels
+    } = useFetchData()
+
+    const { dataProvider, layoutProvider } = useRecyclerView({
+        followedCategories,
+        liveChannels,
+        offlineChannels,
+        recommendedChannels
     })
-
-    const { data: liveChannels } = useQuery<Channel[]>({
-        queryKey: ['live_channels'],
-        queryFn: fetchLiveChannels
-    })
-
-    const { data: recommendedChannels } = useQuery<Channel[]>({
-        queryKey: ['recommended_channels'],
-        queryFn: fetchRecommendedChannels
-    })
-
-    const { data: offlineChannels } = useQuery<Streamer[]>({
-        queryKey: ['offline_channels'],
-        queryFn: fetchOfflineChannels
-    })
-
-    const [dataProvider, setDataProvider] = useState(
-        new DataProvider((r1, r2) => {
-            return r1 !== r2
-        })
-    )
-
-    useEffect(() => {
-        const data: LayoutData[] = []
-
-        data.push({
-            type: LayoutType.SCREEN_TITLE,
-            data: { title: 'Seguindo' }
-        })
-
-        if (followedCategories) {
-            data.push(
-                {
-                    type: LayoutType.LIST_HEADER,
-                    data: { title: 'Categorias seguidas' }
-                },
-                {
-                    type: LayoutType.CATEGORY_LIST,
-                    data: { categories: followedCategories }
-                }
-            )
-        }
-
-        if (liveChannels) {
-            data.push({
-                type: LayoutType.LIST_HEADER,
-                data: { title: 'Seus canais ao vivo' }
-            })
-
-            const channels = liveChannels.map(it => ({
-                type: LayoutType.LIVE_CHANNEL_ITEM,
-                data: { channel: it }
-            }))
-
-            data.push(...channels)
-        }
-
-        if (recommendedChannels) {
-            data.push({
-                type: LayoutType.LIST_HEADER,
-                data: { title: 'Canais recomendados para você' }
-            })
-
-            const channels = recommendedChannels.map(it => ({
-                type: LayoutType.LIVE_CHANNEL_ITEM,
-                data: { channel: it }
-            }))
-
-            data.push(...channels)
-        }
-
-        if (offlineChannels) {
-            data.push({
-                type: LayoutType.LIST_HEADER,
-                data: { title: 'Seus canais off-line' }
-            })
-
-            const channels = offlineChannels.map(it => ({
-                type: LayoutType.STREAMER_ITEM,
-                data: { streamer: it }
-            }))
-
-            data.push(...channels)
-        }
-
-        setDataProvider(dataProvider.cloneWithRows(data))
-    }, [followedCategories, liveChannels, recommendedChannels, offlineChannels])
-
-    const layoutProvider = useMemo(() => {
-        return LayoutUtils.getLayoutProvider(dataProvider.getAllData())
-    }, [dataProvider])
 
     const onPressLiveChannel = (channel: Channel) => {
         onStartStream({
