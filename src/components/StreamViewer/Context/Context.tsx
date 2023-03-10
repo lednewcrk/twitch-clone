@@ -8,21 +8,26 @@ import {
 export const StreamViewerContext = createContext({} as StreamViewerContextType)
 
 export function StreamViewerProvider({ children }: StreamViewerProviderType) {
-    const [currentStream, setCurrentStream] = useState<Stream | null>(null)
+    const [currentLiveStream, setCurrentLiveStream] = useState<Stream | null>(
+        null
+    )
 
-    const isLiveStreaming = useMemo(() => !!currentStream, [currentStream])
+    const isLiveStreaming = useMemo(
+        () => !!currentLiveStream,
+        [currentLiveStream]
+    )
     const onStartStream: StreamViewerContextType['onStartStream'] =
-        setCurrentStream
+        setCurrentLiveStream
 
     const onCloseStream: StreamViewerContextType['onCloseStream'] = () => {
-        setCurrentStream(null)
+        setCurrentLiveStream(null)
     }
 
     return (
         <StreamViewerContext.Provider
             value={{
                 isLiveStreaming,
-                currentStream,
+                currentLiveStream,
                 onStartStream,
                 onCloseStream
             }}

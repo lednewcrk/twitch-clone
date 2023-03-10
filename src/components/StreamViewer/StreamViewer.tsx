@@ -5,15 +5,16 @@ import { useStreamViewer } from './Context/hooks/useStreamViewer'
 import { StreamViewerProps } from './types'
 
 export function StreamViewer({ children }: StreamViewerProps) {
-    const { isLiveStreaming, currentStream, onCloseStream } = useStreamViewer()
+    const { isLiveStreaming, currentLiveStream, onCloseStream } =
+        useStreamViewer()
 
     const videoPlayerRef = useRef<Video | null>(null)
 
     useEffect(() => {
-        if (currentStream) {
+        if (currentLiveStream) {
             videoPlayerRef.current
                 ?.loadAsync({
-                    uri: currentStream.source,
+                    uri: currentLiveStream.source,
                     type: 'm3u8'
                 })
                 .then(() => {
@@ -22,10 +23,11 @@ export function StreamViewer({ children }: StreamViewerProps) {
         } else {
             videoPlayerRef.current?.stopAsync()
         }
-    }, [currentStream])
+    }, [currentLiveStream])
 
     return (
         <AnimatedScreen
+            currentLiveStream={currentLiveStream}
             isEnabled={isLiveStreaming}
             onClose={onCloseStream}
             videoPlayerRef={videoPlayerRef}
