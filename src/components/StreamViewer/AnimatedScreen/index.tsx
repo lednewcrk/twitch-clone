@@ -31,13 +31,15 @@ export type AnimatedScreenProps = {
     children?: React.ReactNode
     onClose?: () => void
     videoPlayerRef?: React.Ref<Video>
+    currentLiveStream: Stream | null
 }
 
 export function AnimatedScreen({
     children,
     isEnabled,
     onClose,
-    videoPlayerRef
+    videoPlayerRef,
+    currentLiveStream
 }: AnimatedScreenProps) {
     const opacity = useSharedValue(0)
     const isMiniPlayer = useSharedValue(false)
@@ -212,7 +214,7 @@ export function AnimatedScreen({
                             translateX={miniplayerTranslateX}
                             onPress={onPressVideoPlayer}
                         />
-                        <Chat />
+                        {currentLiveStream && <Chat />}
                     </Animated.View>
                 )}
             </View>
